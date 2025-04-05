@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymPass - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/teretanaAdminDetalji.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/homeAdmin">GymPass</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/homeAdmin">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profilAdmin">Moj profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kontaktAdmin">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kupovinaAdmin">Kupite članarinu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <!-- Teretana detalji -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="/<%= teretana[0].slika %>" class="img-fluid" alt="<%= teretana.naslov %>">
+            </div>
+            <div class="col-md-8">
+                <h2><%= teretana.naslov %></h2>
+                <p><strong>Podnaslov:</strong> <%= teretana[0].podnaslov %></p>
+                <p><strong>Adresa:</strong> <%= teretana[0].adresa %></p>
+                <p><strong>Radno vreme:</strong> <%= teretana[0].radno_vrijeme %></p>
+
+                <h4>Detalji teretane:</h4>
+                <p><strong>Radno vreme:</strong></p>
+                <ul>
+                    <li><strong>Ponedeljak:</strong> <%= teretana[0].radno_vrijeme_ponedjeljak %></li>
+                    <li><strong>Utorak:</strong> <%= teretana[0].radno_vrijeme_utorak %></li>
+                    <li><strong>Sreda:</strong> <%= teretana[0].radno_vrijeme_srijeda %></li>
+                    <li><strong>Četvrtak:</strong> <%= teretana[0].radno_vrijeme_cetvrtak %></li>
+                    <li><strong>Petak:</strong> <%= teretana[0].radno_vrijeme_petak %></li>
+                    <li><strong>Subota:</strong> <%= teretana[0].radno_vrijeme_subota %></li>
+                    <li><strong>Nedelja:</strong> <%= teretana[0].radno_vrijeme_nedjelja %></li>
+                </ul>
+
+                <h4>Kontakt:</h4>
+                <p><strong>Broj telefona:</strong> <%= teretana[0].broj_telefona %></p>
+                <p><strong>Email:</strong> <a href="mailto:<%= teretana[0].email %>"><%= teretana[0].email %></a></p>
+                <p><strong>O nama:</strong> <%= teretana[0].o_nama %></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>O kompaniji</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">GymPass</a></li>
+                        <li><a href="#">Kompanije</a></li>
+                        <li><a href="#">Partneri</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Možda će Vas zanimati</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Objekti</a></li>
+                        <li><a href="#">Uslovi prodaje</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Politika privatnosti</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Kontaktirajte nas</h5>
+                    <p class="mb-1">Mobilni telefon: 033 867 591</p>
+                    <p>E-mail adresa: <a href="mailto:kontakt@fitpass.ba" class="text-danger">kontakt@gympass.ba</a></p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Zapratite nas</h5>
+                    <div>
+                        <a href="#" class="me-2"><img src="https://img.icons8.com/ios-filled/24/facebook-new.png" alt="Facebook"></a>
+                        <a href="#" class="me-2"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram"></a>
+                        <a href="#"><img src="https://img.icons8.com/ios-filled/24/linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

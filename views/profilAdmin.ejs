@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymPass - Moj profil</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/home.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/home">GymPass</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/homeAdmin">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/profilAdmin">Moj profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/kontaktAdmin">Kontakt</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/kupovinaAdmin">Kupite članarinu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/teretaneAdmin">Teretane</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Card Section -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+            
+    
+                    <div class="card-body">
+                        <h2 class="card-title"><%= admin.ime %> <%= admin.prezime %></h2>
+                        <form action="/profilAdmin/updateAdmin" method="POST">
+                            <div class="mb-3">
+                                <label for="ime" class="form-label">Ime</label>
+                                <input type="text" class="form-control" id="ime" name="ime" value="<%= admin.ime %>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="prezime" class="form-label">Prezime</label>
+                                <input type="text" class="form-control" id="prezime" name="prezime" value="<%= admin.prezime %>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="<%= admin.email %>" required>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="mjesto_rodjenja" class="form-label">Mjesto Rođenja</label>
+                                <input type="text" class="form-control" id="mjesto_rodjenja" name="mjesto_rodjenja" value="<%= admin.mjesto_rodjenja %>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="drzava" class="form-label">Država</label>
+                                <input type="text" class="form-control" id="drzava" name="drzava" value="<%= admin.drzava %>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="grad" class="form-label">Grad</label>
+                                <input type="text" class="form-control" id="grad" name="grad" value="<%= admin.grad %>" required>
+                            </div>
+    
+                            <!-- Submit button to update profile -->
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-warning">Izmeni profil</button>
+                                <a href="/deleteAdmin" class="btn btn-danger">Izbriši profil</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>O kompaniji</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">FitPass</a></li>
+                        <li><a href="#">Kompanije</a></li>
+                        <li><a href="#">Partneri</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Možda će Vas zanimati</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Objekti</a></li>
+                        <li><a href="#">Uslovi prodaje</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Politika privatnosti</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Kontaktirajte nas</h5>
+                    <p class="mb-1">Mobilni telefon: 033 867 591</p>
+                    <p>E-mail adresa: <a href="mailto:kontakt@fitpass.ba" class="text-danger">kontakt@gympass.ba</a></p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Zapratite nas</h5>
+                    <div>
+                        <a href="#" class="me-2"><img src="https://img.icons8.com/ios-filled/24/facebook-new.png" alt="Facebook"></a>
+                        <a href="#" class="me-2"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram"></a>
+                        <a href="#"><img src="https://img.icons8.com/ios-filled/24/linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

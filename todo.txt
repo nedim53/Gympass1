@@ -1,0 +1,3 @@
+znaci obicni paket dobijes samo gym, sa boljim dobijes ibazen i najbolji i bazen i teretau i spa i sve
+
+provjeri da dva korisnika nemaju isti mail

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymPass - Teretane</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/teretaneAdmin.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/homeAdmin">GymPass</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/homeAdmin">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profilAdmin">Moj profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kontaktAdmin">Kontakt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kupovinaAdmin">Kupite članarinu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/teretaneAdmin">Teretane</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        
+
+
+    <div class="container oglas my-5">
+        <h1 class="text-orange text-center mb-4">Dodaj Oglas za Teretanu</h1>
+        <form action="/teretaneAdmin/dodajTeretanu" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <!-- Slika -->
+                <div class="col-md-6 mb-3">
+                    <label for="slika" class="form-label">Slika teretane</label>
+                    <input type="file" class="form-control" id="slika" name="slika">
+                </div>
+    
+                <!-- Naslov -->
+                <div class="col-md-6 mb-3">
+                    <label for="naslov" class="form-label">Naslov</label>
+                    <input type="text" class="form-control" id="naslov" name="naslov" placeholder="Unesite naslov teretane" required>
+                </div>
+    
+                <!-- Podnaslov -->
+                <div class="col-md-6 mb-3">
+                    <label for="podnaslov" class="form-label">Podnaslov</label>
+                    <input type="text" class="form-control" id="podnaslov" name="podnaslov" placeholder="Unesite podnaslov teretane" required>
+                </div>
+    
+                <!-- Adresa -->
+                <div class="col-md-6 mb-3">
+                    <label for="adresa" class="form-label">Adresa</label>
+                    <input type="text" class="form-control" id="adresa" name="adresa" placeholder="Unesite adresu" required>
+                </div>
+    
+                <!-- Radno vrijeme -->
+                <div class="col-md-6 mb-3">
+                    <label for="radno_vrijeme" class="form-label">Radno vrijeme</label>
+                    <input type="text" class="form-control" id="radno_vrijeme" name="radno_vrijeme" placeholder="Unesite radno vrijeme (npr. 9:00 - 21:00)" required>
+                </div>
+    
+                <!-- O nama -->
+                <div class="col-md-12 mb-3">
+                    <label for="o_nama" class="form-label">O nama</label>
+                    <textarea class="form-control" id="o_nama" name="o_nama" rows="4" placeholder="Unesite opis teretane" required></textarea>
+                </div>
+    
+                <!-- Kontakt telefon -->
+                <div class="col-md-6 mb-3">
+                    <label for="broj_telefona" class="form-label">Broj telefona</label>
+                    <input type="text" class="form-control" id="broj_telefona" name="broj_telefona" placeholder="Unesite broj telefona">
+                </div>
+    
+                <!-- Email -->
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Unesite email" required>
+                </div>
+    
+                <!-- Radno vrijeme po danima -->
+                <h3 class="text-orange mt-4">Radno vrijeme po danima</h3>
+                <div class="col-md-6 mb-3">
+                    <label for="radno_vrijeme_ponedjeljak" class="form-label">Ponedjeljak</label>
+                    <input type="text" class="form-control" id="radno_vrijeme_ponedjeljak" name="radno_vrijeme_ponedjeljak" placeholder="Unesite radno vrijeme">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="radno_vrijeme_utorak" class="form-label">Utorak</label>
+                    <input type="text" class="form-control" id="radno_vrijeme_utorak" name="radno_vrijeme_utorak" placeholder="Unesite radno vrijeme">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="radno_vrijeme_srijeda" class="form-label">Srijeda</label>
+                    <input type="text" class="form-control" id="radno_vrijeme_srijeda" name="radno_vrijeme_srijeda" placeholder="Unesite radno vrijeme">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="radno_vrijeme_cetvrtak" class="form-label">Četvrtak</label>
+                    <input type="text" class="form-control" id="radno_vrijeme_cetvrtak" name="radno_vrijeme_cetvrtak" placeholder="Unesite radno vrijeme">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="radno_vrijeme_petak" class="form-label">Petak</label>
+                    <input type="text" class="form-control" id="radno_vrijeme_petak" name="radno_vrijeme_petak" placeholder="Unesite radno vrijeme">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="subota" class="form-label">Subota</label>
+                    <input type="text" class="form-control" id="radno_vrijeme_subota" name="radno_vrijeme_subota" placeholder="Unesite radno vrijeme">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="radno_vrijeme_nedjelja" class="form-label">Nedjelja</label>
+                    <input type="text" class="form-control" id="radno_vrijeme_nedjelja" name="radno_vrijeme_nedjelja" placeholder="Unesite radno vrijeme">
+                </div>
+    
+                <!-- Dodaj ostale dane na sličan način... -->
+    
+                <!-- Dugme za slanje -->
+                <div class="col-md-12 text-center mt-4">
+                    <button type="submit" class="btn btn-orange">Dodaj Oglas</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="container my-5">
+        <h2 class="text-orange text-center mb-4">Pregled Teretana</h2>
+        <div id="teretaneList" class="row">
+            <!-- Kartice teretana će biti dinamički ubačene ovdje -->
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>O kompaniji</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">FitPass</a></li>
+                        <li><a href="#">Kompanije</a></li>
+                        <li><a href="#">Partneri</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Možda će Vas zanimati</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Objekti</a></li>
+                        <li><a href="#">Uslovi prodaje</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Politika privatnosti</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Kontaktirajte nas</h5>
+                    <p class="mb-1">Mobilni telefon: 033 867 591</p>
+                    <p>E-mail adresa: <a href="mailto:kontakt@fitpass.ba" class="text-danger">kontakt@gympass.ba</a></p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Zapratite nas</h5>
+                    <div>
+                        <a href="#" class="me-2"><img src="https://img.icons8.com/ios-filled/24/facebook-new.png" alt="Facebook"></a>
+                        <a href="#" class="me-2"><img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram"></a>
+                        <a href="#"><img src="https://img.icons8.com/ios-filled/24/linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/javascripts/teretaneAdmin.js"></script>
+</body>
+</html>
